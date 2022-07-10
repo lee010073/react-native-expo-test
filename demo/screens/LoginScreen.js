@@ -10,7 +10,6 @@ import {
 import React, { Component, useState, useContext, useEffect } from "react";
 import { AuthContext } from "../contexts/authContext";
 import Modal from "react-native-modal";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const LoginScreen = () => {
   const context = useContext(AuthContext);
@@ -32,7 +31,6 @@ const LoginScreen = () => {
           uri: "https://reactnative.dev/img/tiny_logo.png",
         }}
       />
-      {/* <Button title="Show modal" onPress={toggleModal} /> */}
       <View
         style={{
           marginTop: 10,
@@ -140,7 +138,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   tinyLogo: {
-    width: 50,
-    height: 50,
+    width: 80,
+    height: 80,
   },
 });
