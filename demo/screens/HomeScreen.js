@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import {
   StyleSheet,
   Text,
@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import Carousel from "react-native-anchor-carousel";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { AuthContext } from "../contexts/authContext";
 
 const { width: windowWidth } = Dimensions.get("window");
 
@@ -120,7 +121,8 @@ const SEPARATOR_WIDTH = 10;
 export default function HomeScreen(props) {
   const { style } = props;
   const carouselRef = useRef(null);
-
+  const carouselRef2 = useRef(null);
+  const context = useContext(AuthContext);
   async function handleInstallNowClick(url) {
     const supported = await Linking.canOpenURL(url);
     if (supported) {
@@ -179,11 +181,7 @@ export default function HomeScreen(props) {
               }}
             >
               <Text style={{ fontSize: 11 }}>
-                Earn Up to{" "}
-                <Text style={{ color: "blue", fontweight: "400" }}>
-                  {points}
-                </Text>{" "}
-                point
+                Earn Up to <Text style={{ color: "blue" }}>{points}</Text> point
               </Text>
               <Ionicons
                 style={{ marginLeft: 30 }}
@@ -205,7 +203,7 @@ export default function HomeScreen(props) {
         activeOpacity={1}
         style={styles.item2}
         onPress={() => {
-          carouselRef.current.scrollToIndex(index);
+          carouselRef2.current.scrollToIndex(index);
         }}
       >
         <View style={{ flexDirection: "column", marginTop: 10, flex: 1 }}>
@@ -229,9 +227,7 @@ export default function HomeScreen(props) {
           }}
         >
           <Text style={{ fontSize: 14 }}>
-            Earn Up to{" "}
-            <Text style={{ color: "blue", fontweight: "400" }}>{points}</Text>{" "}
-            point
+            Earn Up to <Text style={{ color: "blue" }}>{points}</Text> point
           </Text>
           <Ionicons
             style={{ marginLeft: 30 }}
@@ -263,7 +259,7 @@ export default function HomeScreen(props) {
       <Carousel
         keyExtractor={(item) => item?.id}
         style={{}}
-        ref={carouselRef}
+        ref={carouselRef2}
         data={data2}
         renderItem={renderItem2}
         itemWidth={ITEM2_WIDTH}
@@ -272,6 +268,20 @@ export default function HomeScreen(props) {
         inActiveOpacity={1}
         containerWidth={windowWidth}
       />
+      <View style={{ marginLeft: "auto", marginRight: "auto", marginTop: 40 }}>
+        <TouchableOpacity
+          style={{
+            borderColor: "black",
+            borderWidth: "1px solid black",
+            borderRadius: "4px",
+            padding: 10,
+            backgroundColor: "black",
+          }}
+          onPress={() => context.signOut()}
+        >
+          <Text style={{ color: "white" }}>Logout @Remove Async Storage</Text>
+        </TouchableOpacity>
+      </View>
     </ScrollView>
   );
 }
