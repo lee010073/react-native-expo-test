@@ -21,7 +21,7 @@ const LoginScreen = () => {
           uri: "https://reactnative.dev/img/tiny_logo.png",
         }}
       />
-      <Text>Login</Text>
+      <Text>Logsin</Text>
       <TextInput
         style={styles.input}
         onChangeText={setEmail}
