@@ -8,7 +8,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Router = () => {
   const Stack = createNativeStackNavigator();
   const context = useContext(AuthContext);
-  console.log(context, "fk context");
 
   return (
     <NavigationContainer>
@@ -17,11 +16,11 @@ const Router = () => {
       </Stack.Navigator> */}
       {!!context.loginSuccess ? (
         <Stack.Navigator>
-          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Home" component={HomeScreen} />
         </Stack.Navigator>
       ) : (
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
       )}
     </NavigationContainer>
