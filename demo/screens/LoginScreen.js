@@ -10,12 +10,26 @@ import { AuthContext } from "../contexts/authContext";
 
 const LoginScreen = () => {
   const context = useContext(AuthContext);
-  console.log(context, "this is context ");
+  const [email, setEmail] = useState("");
+  const [pw, setPw] = useState("");
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Login</Text>
-      <TextInput />
-      <TouchableOpacity onPress={() => context.setLoginSuccess(true)}>
+      <TextInput
+        style={styles.input}
+        onChangeText={setEmail}
+        value={email}
+        placeholder="email"
+        keyboardType="email-address"
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={setPw}
+        value={pw}
+        placeholder="password"
+        keyboardType="default"
+      />
+      <TouchableOpacity onPress={() => context.checking(email, pw)}>
         <Text>Press Here</Text>
       </TouchableOpacity>
     </View>
@@ -24,4 +38,11 @@ const LoginScreen = () => {
 
 export default LoginScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});

@@ -11,9 +11,6 @@ const Router = () => {
 
   return (
     <NavigationContainer>
-      {/* <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator> */}
       {!!context.loginSuccess ? (
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
