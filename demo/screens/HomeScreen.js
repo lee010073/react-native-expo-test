@@ -12,6 +12,7 @@ import {
   Alert,
 } from "react-native";
 import Carousel from "react-native-anchor-carousel";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const { width: windowWidth } = Dimensions.get("window");
 
@@ -19,23 +20,72 @@ const data = [
   {
     id: "item2",
     image: "https://i.imgur.com/N3nQ9CS.jpg",
-    title: "Peach tea Whiskey Lorem ipsum",
+    title: "Advanced Health Screening",
     url: "https://github.com/lehoangnam97/react-native-anchor-carousel",
-    points: 20,
+    points: 1000,
   },
   {
     id: "item3",
     image: "https://i.imgur.com/AzdYlDM.jpg",
-    title: "Camera lens Lorem ipsum dolor sit amet",
+    title: "Title 2",
     url: "https://www.npmjs.com/package/react-native-anchor-carousel",
-    points: 40,
+    points: 400,
   },
   {
     id: "item1",
     image: "https://i.imgur.com/s7GgEa8.jpg",
-    title: "Shoes Lorem ipsum dolor sit amet",
+    title: "Title 3 ",
+    url: "https://www.npmjs.com/package/react-native-anchor-carousel",
+    points: 200,
+  },
+  {
+    id: "item6",
+    image: "https://i.imgur.com/1O1Kd6T.jpg",
+    title: "Title 4",
+    url: "https://github.com/lehoangnam97/react-native-anchor-carousel",
+    points: 220,
+  },
+  {
+    id: "item4",
+    image: "https://i.imgur.com/eNuhvpN.jpg",
+    title: "Modern sunglasses ",
+    url: "https://github.com/lehoangnam97/react-native-anchor-carousel",
+    points: 220,
+  },
+
+  {
+    id: "item5",
+    image: "https://i.imgur.com/jEiBmma.jpg",
+    title: "Cigarettes pipe t",
     url: "https://www.npmjs.com/package/react-native-anchor-carousel",
     points: 20,
+  },
+];
+
+const data2 = [
+  {
+    id: "item2",
+    image: "https://i.imgur.com/N3nQ9CS.jpg",
+    title: "Say no to sugar",
+    url: "https://github.com/lehoangnam97/react-native-anchor-carousel",
+    points: 20,
+    days: 2,
+  },
+  {
+    id: "item3",
+    image: "https://i.imgur.com/AzdYlDM.jpg",
+    title: "5km Challenge",
+    url: "https://www.npmjs.com/package/react-native-anchor-carousel",
+    points: 40,
+    days: 6,
+  },
+  {
+    id: "item1",
+    image: "https://i.imgur.com/s7GgEa8.jpg",
+    title: "10km Challenge",
+    url: "https://www.npmjs.com/package/react-native-anchor-carousel",
+    points: 20,
+    days: 2,
   },
   {
     id: "item6",
@@ -43,24 +93,29 @@ const data = [
     title: "Bottle Opener Lorem ipsum dolor sit amet",
     url: "https://github.com/lehoangnam97/react-native-anchor-carousel",
     points: 20,
+    days: 2,
   },
   {
     id: "item4",
     image: "https://i.imgur.com/eNuhvpN.jpg",
-    title: "Modern sunglasses Lorem ipsum dolor sit amet",
+    title: "Modern sunglasses",
     url: "https://github.com/lehoangnam97/react-native-anchor-carousel",
+    points: 200,
+    days: 5,
   },
 
   {
     id: "item5",
     image: "https://i.imgur.com/jEiBmma.jpg",
-    title: "Cigarettes pipe Lorem ipsum dolor sit amet",
+    title: "Cigarettes pipe ",
     url: "https://www.npmjs.com/package/react-native-anchor-carousel",
     points: 20,
+    days: 4,
   },
 ];
 
 const ITEM_WIDTH = 0.7 * windowWidth;
+const ITEM2_WIDTH = 0.53 * windowWidth;
 const SEPARATOR_WIDTH = 10;
 export default function HomeScreen(props) {
   const { style } = props;
@@ -75,18 +130,10 @@ export default function HomeScreen(props) {
     }
   }
 
-  function renderHeader() {
+  function renderHeader(words) {
     return (
-      <View>
-        <Text style={styles.name}>Assessments</Text>
-      </View>
-    );
-  }
-
-  function renderSecondHeader() {
-    return (
-      <View>
-        <Text style={styles.name}>Challenges</Text>
+      <View style={{ marginTop: 10, marginBottom: 10 }}>
+        <Text style={styles.name}>{words}</Text>
       </View>
     );
   }
@@ -103,12 +150,7 @@ export default function HomeScreen(props) {
       >
         <View style={{ flexDirection: "row", marginTop: 10 }}>
           <View style={{ marginLeft: 10 }}>
-            <Image
-              style={{ height: 80, width: 80 }}
-              source={{
-                uri: "https://reactnative.dev/img/tiny_logo.png",
-              }}
-            />
+            <Image style={{ height: 80, width: 80 }} source={{ uri: image }} />
           </View>
 
           <View
@@ -117,8 +159,39 @@ export default function HomeScreen(props) {
               flexDirection: "column",
             }}
           >
-            <Text style={{ marginTop: 10 }}>Advance Health Screening</Text>
-            <Text style={{ marginTop: 30 }}>Earn Up to {points} point</Text>
+            <View style={{ flex: 1 }}>
+              <Text
+                style={{
+                  marginTop: 10,
+                  fontWeight: "500",
+                  fontSize: 12,
+                  maxWidth: 150,
+                }}
+              >
+                {title}
+              </Text>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                marginTop: 30,
+              }}
+            >
+              <Text style={{ fontSize: 11 }}>
+                Earn Up to{" "}
+                <Text style={{ color: "blue", fontweight: "400" }}>
+                  {points}
+                </Text>{" "}
+                point
+              </Text>
+              <Ionicons
+                style={{ marginLeft: 30 }}
+                name="arrow-forward"
+                size={20}
+                color="red"
+              />
+            </View>
           </View>
         </View>
       </Pressable>
@@ -126,39 +199,54 @@ export default function HomeScreen(props) {
   }
 
   function renderItem2({ item, index }) {
-    const { image, title, url } = item;
+    const { image, title, points, days } = item;
     return (
       <Pressable
         activeOpacity={1}
-        style={styles.item}
+        style={styles.item2}
         onPress={() => {
           carouselRef.current.scrollToIndex(index);
         }}
       >
-        {/* <Image source={{ uri: image }} style={styles.image} />
-        <View style={styles.lowerContainer}>
-          <View style={styles.lowerLeft}>
-            <Text style={styles.titleText} numberOfLines={2}>
+        <View style={{ flexDirection: "column", marginTop: 10, flex: 1 }}>
+          <View style={{ marginLeft: 10, marginRight: 10 }}>
+            <Image style={{ height: 80 }} source={{ uri: image }} />
+            <Text style={{ marginTop: 10, fontWeight: "500", fontSize: 12 }}>
               {title}
             </Text>
-            <Text style={styles.descriptionText} numberOfLines={1}>
-              reactNativeAnchorCarousel
+            <Text style={{ marginTop: 10, fontWeight: "300", fontSize: 12 }}>
+              {days} Days left
             </Text>
           </View>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => handleInstallNowClick(url)}
-          >
-            <Text style={styles.buttonText}>Install Now</Text>
-          </TouchableOpacity>
-        </View> */}
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            marginBottom: 20,
+            marginLeft: 10,
+            marginRight: 10,
+          }}
+        >
+          <Text style={{ fontSize: 14 }}>
+            Earn Up to{" "}
+            <Text style={{ color: "blue", fontweight: "400" }}>{points}</Text>{" "}
+            point
+          </Text>
+          <Ionicons
+            style={{ marginLeft: 30 }}
+            name="arrow-forward"
+            size={20}
+            color="red"
+          />
+        </View>
       </Pressable>
     );
   }
 
   return (
-    <ScrollView style={{ flex: 1 }}>
-      {renderHeader()}
+    <ScrollView style={{ flex: 1, marginLeft: 20, marginRight: 20 }}>
+      {renderHeader("Assessment")}
       <Carousel
         keyExtractor={(item) => item?.id}
         style={{}}
@@ -171,14 +259,14 @@ export default function HomeScreen(props) {
         inActiveOpacity={1}
         containerWidth={windowWidth}
       />
-      {renderSecondHeader()}
+      {renderHeader("Challenges")}
       <Carousel
         keyExtractor={(item) => item?.id}
         style={{}}
         ref={carouselRef}
-        data={data}
+        data={data2}
         renderItem={renderItem2}
-        itemWidth={ITEM_WIDTH}
+        itemWidth={ITEM2_WIDTH}
         separatorWidth={SEPARATOR_WIDTH}
         inActiveScale={1}
         inActiveOpacity={1}
@@ -205,6 +293,17 @@ const styles = StyleSheet.create({
   item: {
     backgroundColor: "white",
     height: 100,
+    borderRadius: 5,
+    borderColor: "#EAECEE",
+
+    shadowOpacity: 0.18,
+    shadowRadius: 1.0,
+    elevation: 1,
+  },
+  item2: {
+    backgroundColor: "white",
+    width: 200,
+    height: 350,
     borderRadius: 5,
     borderColor: "#EAECEE",
 
