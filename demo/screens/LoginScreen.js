@@ -4,6 +4,7 @@ import {
   View,
   TouchableOpacity,
   TextInput,
+  Image,
 } from "react-native";
 import React, { Component, useState, useContext } from "react";
 import { AuthContext } from "../contexts/authContext";
@@ -14,6 +15,12 @@ const LoginScreen = () => {
   const [pw, setPw] = useState("");
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Image
+        style={styles.tinyLogo}
+        source={{
+          uri: "https://reactnative.dev/img/tiny_logo.png",
+        }}
+      />
       <Text>Login</Text>
       <TextInput
         style={styles.input}
@@ -44,5 +51,9 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
   },
 });
