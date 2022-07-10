@@ -139,7 +139,7 @@ export default function HomeScreen(props) {
   }
 
   function renderItem({ item, index }) {
-    const { image, title, points, url } = item;
+    const { image, title, points } = item;
     return (
       <Pressable
         activeOpacity={1}
@@ -311,57 +311,7 @@ const styles = StyleSheet.create({
     shadowRadius: 1.0,
     elevation: 1,
   },
-  image: {
-    backgroundColor: "#EBEBEB",
-  },
-  lowerContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  lowerLeft: {
-    width: "50%",
-  },
-  titleText: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#1C2127",
-    marginTop: 4,
-  },
-  descriptionText: {
-    fontSize: 14,
 
-    color: "#A0A0A0",
-  },
-  button: {
-    width: "40%",
-    marginLeft: 10,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderRadius: 4,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingVertical: 10,
-    paddingHorizontal: 5,
-    borderColor: "#585B60",
-  },
-  buttonText: {
-    fontWeight: "bold",
-    fontSize: 16,
-    color: "#585B60",
-  },
-
-  header: {
-    flexDirection: "row",
-    justifyContent: "center",
-    marginVertical: 20,
-    borderColor: "#A0A0A0",
-    paddingHorizontal: 10,
-  },
-  logo: {
-    width: 40,
-    aspectRatio: 1,
-    borderRadius: 20,
-    marginRight: 10,
-  },
   name: {
     fontSize: 14,
     fontWeight: "bold",
