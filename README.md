@@ -5,7 +5,7 @@ email:123
 password:1234
 
 
-how to test the app
+# how to test the app
 
 cd demo
 
