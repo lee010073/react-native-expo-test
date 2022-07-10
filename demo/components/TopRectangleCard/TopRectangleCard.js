@@ -14,7 +14,7 @@ import {
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const TopRectangleCard = ({ props, index }, ref) => {
-  const { image, title, points } = props;
+  const { image = "", title = "", points = 0 } = props;
 
   return (
     <View

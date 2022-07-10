@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders when there are 99999 points 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderColor": "#DADEE1",
+      "height": 100,
+    }
+  }
+>
+  <View
+    accessible={true}
+    activeOpacity={1}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "marginTop": 10,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "marginLeft": 10,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "https://i.imgur.com/AzdYlDM.jpg",
+            }
+          }
+          style={
+            Object {
+              "height": 80,
+              "width": 80,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "column",
+            "marginLeft": 5,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 12,
+                "fontWeight": "500",
+                "maxWidth": 150,
+              }
+            }
+          >
+            Title 2
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "marginTop": 30,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 11,
+              }
+            }
+          >
+            Earn Up to 
+            <Text
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              99999
+            </Text>
+             point
+          </Text>
+          <Text />
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders when there are no points 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderColor": "#DADEE1",
+      "height": 100,
+    }
+  }
+>
+  <View
+    accessible={true}
+    activeOpacity={1}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "marginTop": 10,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "marginLeft": 10,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "https://i.imgur.com/AzdYlDM.jpg",
+            }
+          }
+          style={
+            Object {
+              "height": 80,
+              "width": 80,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "column",
+            "marginLeft": 5,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 12,
+                "fontWeight": "500",
+                "maxWidth": 150,
+              }
+            }
+          >
+            Title 2
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "marginTop": 30,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 11,
+              }
+            }
+          >
+            Earn Up to 
+            <Text
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              0
+            </Text>
+             point
+          </Text>
+          <Text />
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

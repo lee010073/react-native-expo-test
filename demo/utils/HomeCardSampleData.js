@@ -4,7 +4,6 @@ export const data = [
     image: "https://i.imgur.com/N3nQ9CS.jpg",
     title: "Advanced Health Screening",
     url: "https://github.com/lehoangnam97/react-native-anchor-carousel",
-    points: 1000,
   },
   {
     id: "item3",
