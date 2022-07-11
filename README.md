@@ -21,7 +21,7 @@ TopRectangleCard refers to Assessment Card, in a hustle sorry for the misunderst
 Extra buttons is created to clear the async storage when logged in as logout button in the bottom 
 
 
-# upgrade list:
+# personal upgrade list:
 Usage of typescript
 
 improve context with real API implementation as JSON object/JWT token/Session 
