@@ -12,5 +12,6 @@ cd demo
 yarn ios / yarn android
 
 
-# Naming:
+# special reminder:
 TopRectangleCard refers to Assessment Card, in a hustle sorry for the misunderstanding 
+Extra buttons is created to clear the async storage when logged in as logout button in the bottom 
