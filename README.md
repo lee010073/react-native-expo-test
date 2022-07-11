@@ -10,3 +10,7 @@ password:1234
 cd demo
 
 yarn ios / yarn android
+
+
+# Naming:
+TopRectangleCard refers to Assessment Card, in a hustle sorry for the misunderstanding 
