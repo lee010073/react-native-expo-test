@@ -10,6 +10,8 @@ password:1234
 
 cd demo
 
+yarn
+
 yarn ios / yarn android
 
 
